@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reset Password - Gamearly</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="logo">Gamearly</h1>
+  <div class="container">
+    <div class="content">
+      <h2>Reset Password</h2>
+
+      <input type="email" id="email" placeholder="Email Address" />
+      <input type="password" id="password" placeholder="New Password" />
+      <input type="password" id="confirm" placeholder="Confirm Password" />
+
+      <p class="note" id="error-msg" style="display:none;">*Passwords must match</p>
+
+      <button onclick="checkPasswords()">Send Email</button>
+
+      <div class="note">
+        We will send you a confirmation email.<br>
+        Click "Confirm" on the email to reset the password.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function checkPasswords() {
+      const pw = document.getElementById('password').value;
+      const confirm = document.getElementById('confirm').value;
+      const error = document.getElementById('error-msg');
+
+      if (pw !== confirm || pw === "" || confirm === "") {
+        error.style.display = 'block';
+      } else {
+        error.style.display = 'none';
+        window.location.href = 'emailConfirmation.html';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+/* ==========================================
+   Shared Styles (Used across multiple files)
+   ========================================== */
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base Styles - Used in index.html, create.html, reset.html, emailConfirmation.html */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #00085c;
+  color: white;
+  min-height: 100vh;
+  text-align: center;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container - Used in all pages */
+.container {
+  flex: 1;
+  width: 90%;
+  max-width: 400px;
+  margin: -50px auto 0;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* Logo - Top section */
+h1.logo {
+  font-family: "Press Start 2P", cursive;
+  font-size: 28px;
+  color: #a3c6ff;
+  margin: 30px 0;
+  text-align: center;
+}
+
+/* Content - Centered section */
+.content {
+  width: 100%;
+  transform: translateY(-25px);
+}
+
+/* Heading - All pages */
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* ==========================================
+   Link Styles
+   ========================================== */
+
+/* Common Link Styles - All pages */
+a {
+  color: #2ea8ff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Admin Link - index.html */
+.admin-link {
+  display: block;
+  margin-bottom: 25px;
+}
+
+/* Forgot Password Link - index.html */
+.forgot-link {
+  display: block;
+  text-align: right;
+  margin-top: -10px;
+  margin-bottom: 25px;
+}
+
+/* Back Link - create.html */
+.back-link {
+  display: block;
+  margin-top: 25px;
+  font-size: 14px;
+}
+
+/* ==========================================
+   Form Elements - Shared across forms
+   ========================================== */
+
+/* Input Group - index.html */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  /* gap: 5px; */
+  margin-bottom: 15px;
+}
+
+/* Input Fields - All */
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1.5px solid #fff;
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+input::placeholder {
+  color: #4ea0ff;
+}
+
+/* Buttons - All */
+button {
+  background-color: transparent;
+  border: 1.5px solid #fff;
+  color: white;
+  font-size: 16px;
+  padding: 10px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #2ea8ff;
+  border-color: #2ea8ff;
+}
+
+/* ==========================================
+   Page Specific Styles
+   ========================================== */
+
+/* Sign up text - index.html */
+.signup-text {
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+/* Message Box - emailConfirmation.html */
+.message-box {
+  border: 1.5px solid #fff;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 40px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #c8d9ff;
+}
+
+/* Resend Link - emailConfirmation.html */
+.resend {
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+/* Error Messages - create.html, reset.html */
+.note {
+  font-size: 14px;
+  color: #c8d9ff;
+  text-align: left;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+#error-msg {
+  font-size: 14px;
+  color: #ff6666;
+  text-align: left;
+  margin-top: -15px;
+  margin-bottom: 25px;
+}
+
+/* ==========================================
+   Theme Variations
+   ========================================== */
+
+/* Admin Page Theme */
+.admin-theme {
+  background-color: #c7edf7;
+  color: #00004d;
+}
+
+.admin-theme h2.admin-title {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #03045E;
+}
+
+.admin-theme input {
+  border: 2px solid #00004d;
+  color: #0077b6;
+}
+
+.admin-theme button {
+  border: 2px solid #00004d;
+  color: #00004d;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.admin-theme button:hover {
+  background-color: #00004d;
+  color: #c7edf7;
+}
+
+.admin-theme a {
+  color: #0077b6;
+}
+
+/* Placeholder Theme - placeholderHS.html */
+.placeholder-theme {
+  background-color: #00004d;
+  color: #c7edf7;
+}

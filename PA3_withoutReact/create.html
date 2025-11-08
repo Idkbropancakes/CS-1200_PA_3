@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account - Gamearly</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="logo">Gamearly</h1>
+  <div class="container">
+    <div class="content">
+      <h2>Create an Account</h2>
+
+      <input type="email" placeholder="Email Address" />
+      <input type="text" placeholder="Username" />
+      <input type="password" id="password" placeholder="New Password" />
+      <input type="password" id="confirm" placeholder="Confirm Password" />
+      <p class="note" id="error-msg" style="display:none;">*Passwords must match</p>
+
+      <button onclick="checkPasswords()">Confirm</button>
+      <a href="index.html" class="back-link">Back to Login</a>
+    </div>
+  </div>
+
+  <script>
+    function checkPasswords() {
+      const pw = document.getElementById('password').value;
+      const confirm = document.getElementById('confirm').value;
+      const error = document.getElementById('error-msg');
+      if (pw !== confirm) {
+        error.style.display = 'block';
+      } else {
+        error.style.display = 'none';
+        window.location.href = 'emailConfirmation.html'; // Redirect to email Confirmation
+      }
+    }
+  </script>
+</body>
+</html>
