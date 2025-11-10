@@ -223,3 +223,17 @@ button:hover {
   background-color: #00004d;
   color: #c7edf7;
 }
+
+/* ==========================================
+   Fixed Screen Dimensions for All Pages
+   ========================================== */
+html, body {
+  width: 393px;
+  height: 852px;
+  min-width: 393px;
+  min-height: 852px;
+  max-width: 393px;
+  max-height: 852px;
+  margin: 0 auto;
+  overflow: hidden;
+}
