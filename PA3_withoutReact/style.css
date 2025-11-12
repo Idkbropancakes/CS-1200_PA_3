@@ -186,8 +186,13 @@ button:hover {
 
 /* Admin Page Theme */
 .admin-theme {
-  background-color: #c7edf7;
+  background-color: #CAF0F8;
   color: #00004d;
+}
+
+/* Ensure the admin themed device page (the .page child) uses the admin background */
+.device.admin-theme .page {
+  background-color: #CAF0F8;
 }
 
 .admin-theme h2.admin-title {
@@ -225,15 +230,161 @@ button:hover {
 }
 
 /* ==========================================
-   Fixed Screen Dimensions for All Pages
+   Reset Password Page Styles - reset.html
    ========================================== */
+
+/* Reset Theme - overrides default body styles */
+body.reset-theme {
+  background-color: #00085c;
+  font-family: 'Poppins', sans-serif;
+  color: #c7edf7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  margin: 0;
+  padding: 0 20px;
+}
+
+
+.reset-theme h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #c7edf7;
+  margin-bottom: 40px;
+}
+
+.reset-theme form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  gap: 0; /* inputs already have margin-bottom: 20px from global */
+}
+
+.reset-theme .container {
+  flex: 1;
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* Reset theme color overrides only; inherit all sizing/layout from global */
+.reset-theme input {
+  border-color: #c7edf7;
+  color: #c7edf7;
+}
+
+.reset-theme input::placeholder {
+  color: #4ea0ff;
+}
+
+.reset-theme input:focus {
+  border-color: #4ea0ff;
+}
+
+.reset-theme .error-text {
+  color: #ff4c4c;
+  font-size: 0.9em;
+  text-align: left;
+  margin-top: -15px;
+  visibility: hidden;
+}
+
+.reset-theme button {
+  color: #c7edf7;
+  border: 1.5px solid #c7edf7;
+  width: 60%;
+  max-width: 200px;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+}
+
+.reset-theme button:hover {
+  background-color: #1aa6cf;
+  color: #00004d;
+}
+
+.reset-theme p.note {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #c7edf7;
+}
+
+.reset-theme .red-star {
+  color: red;
+}
+
+/* Center reset page content inside device (scoped) */
+.device.reset-theme .page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset-theme .container {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.reset-theme .content {
+  width: 100%;
+  transform: none;
+}
+
+.reset-theme form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.reset-theme h1.logo {
+  margin: 30px 0;
+}
+
+/* ==========================================
+   Device emulation wrapper (iPhone-ish)
+   Use the .device element to emulate a 393×852 screen
+   ========================================== */
+
+/* Make the page center the device mockup */
 html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #0b1233; /* page background behind device */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The device frame that emulates the iPhone screen */
+.device {
   width: 393px;
   height: 852px;
-  min-width: 393px;
-  min-height: 852px;
-  max-width: 393px;
-  max-height: 852px;
-  margin: 0 auto;
+  border-radius: 20px;
   overflow: hidden;
+  background-color: #00085c; /* default inner background */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.02);
+  -webkit-box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.02);
+  transform: scale(1);
+}
+
+/* Ensure inner pages use full device area */
+.device > .page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive fallback: on very small screens, allow scaling */
+@media (max-width: 420px) {
+  .device { transform: scale(0.95); }
 }
